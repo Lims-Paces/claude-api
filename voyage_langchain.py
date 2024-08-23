@@ -4,10 +4,6 @@ load_dotenv()
 import os
 from langchain_voyageai import VoyageAIEmbeddings
 from langchain_community.retrievers import KNNRetriever
-from langchain_anthropic import ChatAnthropic
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import create_retrieval_chain
 
 # Load API key from environment variables
 api_key = os.environ.get('VOYAGE_API_KEY')
@@ -40,5 +36,5 @@ result = retriever.invoke(query)
 
 
 # Extract and print the top retrieved document
-top1_retrieved_doc = result[0]  # Directly use the result as the document
+top1_retrieved_doc = result[0] 
 print(top1_retrieved_doc)
